@@ -1,6 +1,8 @@
 #pragma once
 #include <cstdint>
 #include <vector>
+
+namespace cutil {
 /// This is a class that has an endless supply of an object stored in heap.
 /// It's main usage is to optimize heap allocations, by using the same trick used by the STD:
 /// Allocating more and more (2^x) elements each time the internal buffer empties.
@@ -61,3 +63,4 @@ public:
         return elem;
     }
 };
+}
