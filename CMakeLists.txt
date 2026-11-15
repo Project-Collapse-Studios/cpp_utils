@@ -9,15 +9,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(${PROJECT_NAME} STATIC
         # HEADERS
-        "include/cutil_string.h"
-        "include/default_pointer.h"
-        "include/endless_well.h"
-        "include/string_reference.h"
+        "${CMAKE_CURRENT_SOURCE_DIR}/include/cutil_string.h"
+        "${CMAKE_CURRENT_SOURCE_DIR}/include/default_pointer.h"
+        "${CMAKE_CURRENT_SOURCE_DIR}/include/endless_well.h"
+        "${CMAKE_CURRENT_SOURCE_DIR}/include/string_reference.h"
         # SOURCES
-        "src/string_reference.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/string_reference.cpp"
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-        $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+        "${CMAKE_CURRENT_SOURCE_DIR}/include"
 )
